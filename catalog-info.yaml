@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: visual-puma-java-quarkus-gitops
+  description: This is GitOps manifest for visual-puma-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: visual-puma-java-quarkus
+    janus-idp.io/tekton: visual-puma-java-quarkus 
+    backstage.io/kubernetes-id: visual-puma-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:visual-puma-java-quarkus

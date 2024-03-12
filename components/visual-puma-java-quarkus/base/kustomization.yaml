@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: visual-puma-java-quarkus
+  janus-idp.io/tekton: visual-puma-java-quarkus
+  backstage.io/kubernetes-id: visual-puma-java-quarkus
+  backstage.io/kubernetes-namespace: flavius-e2e 
+  app.kubernetes.io/part-of: visual-puma-java-quarkus
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
